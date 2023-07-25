@@ -7,6 +7,16 @@ Simple TTC to TTF File Convert Library for C# .NET to split font files into one 
 ## Requirement
 .NET Standard 2.0
 
+## Install
+[NuGet library](https://www.nuget.org/packages/TTCFileSplitter) is available.
+
+```
+dotnet add package TTCFileSplitter
+```
+or for NuGet Package Manager:
+```
+NuGetInstall-Package TTCFileSplitter
+```
 
 ## Usage
 ```
