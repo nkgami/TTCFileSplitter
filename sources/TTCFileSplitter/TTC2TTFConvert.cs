@@ -258,6 +258,7 @@ namespace TTCFileSplitter
                                 ttf.entrySelector = SwapBytesUInt16(reader.ReadUInt16());
                                 ttf.rangeShift = SwapBytesUInt16(reader.ReadUInt16());
                                 ttf.ttfTable = new TTFTable[ttf.numTables];
+                                long offsetBack = 0;
                                 for (int i = 0; i < ttf.numTables; i++)
                                 {
                                     ttf.ttfTable[i] = new TTFTable();
@@ -265,7 +266,8 @@ namespace TTCFileSplitter
                                     ttf.ttfTable[i].checkSum = SwapBytesUInt32(reader.ReadUInt32());
                                     ttf.ttfTable[i].offset = SwapBytesUInt32(reader.ReadUInt32());
                                     ttf.ttfTable[i].length = SwapBytesUInt32(reader.ReadUInt32());
-                                    
+                                    offsetBack = reader.BaseStream.Position;
+
                                     // If tag is "name"
                                     if (CompareCharArray(charName, ttf.ttfTable[i].tag))
                                     {
@@ -297,6 +299,7 @@ namespace TTCFileSplitter
                                             }
                                         }
                                     }
+                                    reader.BaseStream.Position = offsetBack;
                                 }
                                 if (fontFamilyNameString != null)
                                 {
