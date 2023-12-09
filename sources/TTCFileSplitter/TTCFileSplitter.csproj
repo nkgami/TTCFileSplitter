@@ -5,6 +5,7 @@
     <Nullable>disable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
 
 </Project>
